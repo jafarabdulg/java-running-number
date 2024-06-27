@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class PostgreSQLJDBC {
 
-    public static Connection getDataSource() throws Exception {
+    public static Connection getDataSource() throws SQLException {
         Connection conn = null;
         final String url = "URL";
         final String user = "USER";

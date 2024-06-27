@@ -42,13 +42,11 @@ public class RunningNumberController {
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern(runningNumber.prefixContent());
                 return formatter.format(LocalDate.now());
             }
-            default -> {
-                throw  new RuntimeException("Not found prefixType");
-            }
+            default -> throw  new RuntimeException("Not found prefixType");
         }
     }
 
-    private HashMap<String, Object> getCurrentNumber(RunningNumber runningNumber) throws Exception {
+    private HashMap<String, Object> getCurrentNumber(RunningNumber runningNumber) throws RuntimeException {
         var map = new HashMap<String, Object>();
 
         if (isResetCurrentNumber(runningNumber)) {
